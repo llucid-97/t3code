@@ -100,8 +100,15 @@ The Personal Team equivalent also needs a unique bundle identifier:
 ```bash
 T3CODE_IOS_PERSONAL_TEAM=1 \
 T3CODE_IOS_PERSONAL_TEAM_BUNDLE_ID=com.example.t3code \
+T3CODE_IOS_APPLE_TEAM_ID=YOUR_TEAM_ID \
+T3CODE_MOBILE_UPDATES_ENABLED=0 \
 vp run ios:release
 ```
+
+The iPad build can also run on Vision Pro as a compatible app. Select the headset in Xcode
+or install the signed Release build with `xcrun devicectl`. Disabling updates keeps a local
+fork from loading upstream Expo updates. Associated domains and the shared keychain group are
+also omitted in this reduced-capability build.
 
 Build and run the local iOS preview app:
 
